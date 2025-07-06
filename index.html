@@ -41,7 +41,8 @@
                     <div class="server-status-box animated-card">
                         <div class="status-header">
                             <div class="status-indicator online"></div>
-                            <span id="server-status-text">SERVER STATUS: ONLINE (<span id="player-count">0</span>/200 Players)</span>
+                            <span id="server-status-text">SERVER STATUS: BETÖLTÉS...</span>
+                            <span id="player-count" style="display:none;"></span> 
                         </div>
                         <div class="ip-info">
                             <span class="ip-address" id="server-ip">shadowrealms.sytes.net</span>
@@ -101,7 +102,7 @@
                             <li><i class="fa-solid fa-check-circle"></i> Gazdasági rendszer</li>
                             <li><i class="fa-solid fa-check-circle"></i> Rangok és jutalmak</li>
                         </ul>
-                        <button class="btn btn-small">Részletek</button>
+                        <button class="btn btn-small" onclick="window.open('boxpvp.html', '_blank')">Részletek</button>
                     </div>
                     <div class="game-mode-card animated-card">
                         <img src="https://placehold.co/300x200/2196F3/FFFFFF?text=Economy" alt="Economy" class="game-mode-img">
@@ -112,7 +113,7 @@
                             <li><i class="fa-solid fa-check-circle"></i> Játékos boltok</li>
                             <li><i class="fa-solid fa-check-circle"></i> Farmolható területek</li>
                         </ul>
-                        <button class="btn btn-small">Részletek</button>
+                        <button class="btn btn-small" onclick="window.open('economy.html', '_blank')">Részletek</button>
                     </div>
                     <div class="game-mode-card animated-card">
                         <img src="https://placehold.co/300x200/FF5722/FFFFFF?text=OneBlock" alt="OneBlock" class="game-mode-img">
@@ -123,7 +124,7 @@
                             <li><i class="fa-solid fa-check-circle"></i> Egyedi események</li>
                             <li><i class="fa-solid fa-check-circle"></i> Közösségi kihívások</li>
                         </ul>
-                        <button class="btn btn-small">Részletek</button>
+                        <button class="btn btn-small" onclick="window.open('oneblock.html', '_blank')">Részletek</button>
                     </div>
                     <div class="game-mode-card animated-card">
                         <img src="https://placehold.co/300x200/9C27B0/FFFFFF?text=BedWars" alt="BedWars" class="game-mode-img">
@@ -134,7 +135,7 @@
                             <li><i class="fa-solid fa-check-circle"></i> Több pálya</li>
                             <li><i class="fa-solid fa-check-circle"></i> Rangsorolt meccsek</li>
                         </ul>
-                        <button class="btn btn-small">Részletek</button>
+                        <button class="btn btn-small" onclick="window.open('bedwars.html', '_blank')">Részletek</button>
                     </div>
                     <div class="game-mode-card animated-card">
                         <img src="https://placehold.co/300x200/00BCD4/FFFFFF?text=Creative" alt="Creative" class="game-mode-img">
@@ -145,7 +146,18 @@
                             <li><i class="fa-solid fa-check-circle"></i> Telekrendszer</li>
                             <li><i class="fa-solid fa-check-circle"></i> Építő versenyek</li>
                         </ul>
-                        <button class="btn btn-small">Részletek</button>
+                        <button class="btn btn-small" onclick="window.open('creative.html', '_blank')">Részletek</button>
+                    </div>
+                    <div class="game-mode-card animated-card">
+                        <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Kingdoms" alt="Kingdoms" class="game-mode-img">
+                        <h4>Kingdoms</h4>
+                        <p>Építs királyságot, kovácsolj szövetségeket, és hódíts meg területeket!</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check-circle"></i> Királyság menedzsment</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Területfoglalás</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Háborúk és diplomácia</li>
+                        </ul>
+                        <button class="btn btn-small" onclick="window.open('kingdoms.html', '_blank')">Részletek</button>
                     </div>
                 </div>
             </div>
@@ -156,20 +168,7 @@
                 <h2 class="section-title"><i class="fa-solid fa-shop"></i> BOLT</h2>
                 <p class="section-subtitle">Támogasd a szervert, szerezz exkluzív extrákat!</p>
                 <div class="store-grid">
-                    <div class="store-item-card animated-card">
-                        <img src="https://placehold.co/200x200/FFD700/000000?text=VIP+Rang" alt="VIP Rang" class="store-item-img">
-                        <h4>VIP Rang</h4>
-                        <p>Exkluzív parancsok, kozmetikai elemek és prioritás a szerverre való belépéskor!</p>
-                        <span class="price">10€</span>
-                        <button class="btn btn-small"><i class="fa-solid fa-cart-plus"></i> Megveszem</button>
-                    </div>
-                    <div class="store-item-card animated-card">
-                        <img src="https://placehold.co/200x200/00BFFF/FFFFFF?text=Egyedi+Pet" alt="Egyedi Pet" class="store-item-img">
-                        <h4>Egyedi Pet</h4>
-                        <p>Szerezz egy egyedi kisállatot, ami követ téged a kalandjaid során!</p>
-                        <span class="price">5€</span>
-                        <button class="btn btn-small"><i class="fa-solid fa-cart-plus"></i> Megveszem</button>
-                    </div>
+                    <h3 class="coming-soon-text">HAMAROSAN</h3>
                 </div>
             </div>
         </section>
@@ -219,10 +218,10 @@
                 <h2 class="section-title"><i class="fa-solid fa-images"></i> GALÉRIA</h2>
                 <p class="section-subtitle">Képek és videók a szerverről és a közösségről!</p>
                 <div class="gallery-container">
-                    <img src="https://placehold.co/400x300/505050/FFFFFF?text=Kép+1" alt="Galéria kép 1" class="gallery-img animated-card">
-                    <img src="https://placehold.co/400x300/606060/FFFFFF?text=Kép+2" alt="Galéria kép 2" class="gallery-img animated-card">
-                    <img src="https://placehold.co/400x300/707070/FFFFFF?text=Kép+3" alt="Galéria kép 3" class="gallery-img animated-card">
-                    <img src="https://placehold.co/400x300/808080/FFFFFF?text=Kép+4" alt="Galéria kép 4" class="gallery-img animated-card">
+                    <img src="images/image_e8e345.png" alt="Galéria kép 1" class="gallery-img animated-card">
+                    <img src="images/placeholder_gallery2.png" alt="Galéria kép 2" class="gallery-img animated-card">
+                    <img src="images/placeholder_gallery3.png" alt="Galéria kép 3" class="gallery-img animated-card">
+                    <img src="images/placeholder_gallery4.png" alt="Galéria kép 4" class="gallery-img animated-card">
                 </div>
             </div>
         </section>
@@ -233,15 +232,15 @@
                 <p class="section-subtitle">Csatlakozz aktív Discord közösségeinkhez!</p>
                 <div class="discord-servers-grid">
                     <div class="discord-server-card animated-card">
-                        <img src="https://placehold.co/100x100/7289DA/FFFFFF?text=SR" alt="ShadowRealms Discord Logo" class="discord-logo">
-                        <h4>ShadowRealms</h4>
-                        <p>A ShadowRealms Minecraft szerver hivatalos Discordja, ahol játékosokkal beszélgethetsz, és frissítésekről értesülhetsz.</p>
+                        <img src="https://placehold.co/100x100/7289DA/FFFFFF?text=PN" alt="PhantomNetwork Discord Logo" class="discord-logo">
+                        <h4>PhantomNetwork</h4>
+                        <p>A PhantomNetwork Minecraft szerver hivatalos Discordja, ahol játékosokkal beszélgethetsz, és frissítésekről értesülhetsz.</p>
                         <a href="https://discord.gg/Y7upJ9Zm7N" target="_blank" class="btn btn-discord"><i class="fa-brands fa-discord"></i> Csatlakozz!</a>
                     </div>
                     <div class="discord-server-card animated-card">
-                        <img src="https://placehold.co/100x100/5865F2/FFFFFF?text=SP" alt="Shadow&Phantom Discord Logo" class="discord-logo">
-                        <h4>Shadow&Phantom Network</h4>
-                        <p>A Shadow&Phantom Network teljes közösségének Discordja, általános beszélgetésekhez és hírfolyamhoz.</p>
+                        <img src="https://placehold.co/100x100/5865F2/FFFFFF?text=SR" alt="ShadowRealms Discord Logo" class="discord-logo">
+                        <h4>ShadowRealms</h4>
+                        <p>A ShadowRealms Network teljes közösségének Discordja, általános beszélgetésekhez és hírfolyamhoz.</p>
                         <a href="https://discord.gg/x62A3ag54n" target="_blank" class="btn btn-discord-secondary"><i class="fa-brands fa-discord"></i> Csatlakozz!</a>
                     </div>
                 </div>
@@ -276,9 +275,9 @@
                         <h3><i class="fa-brands fa-discord"></i> Discord</h3>
                         <p>A leggyorsabb módja, hogy elérj minket.</p>
                         <a href="https://discord.gg/Y7upJ9Zm7N" target="_blank" class="btn btn-discord"><i class="fa-brands fa-discord"></i> Csatlakozz!</a>
-                        <p class="small-text">ShadowRealms Discord</p>
-                        <a href="https://discord.gg/x62A3ag54n" target="_blank" class="btn btn-discord-secondary"><i class="fa-brands fa-discord"></i> Network Discord</a>
-                        <p class="small-text">Shadow&Phantom Network</p>
+                        <p class="small-text">PhantomNetwork Discord</p>
+                        <a href="https://discord.gg/x62A3ag54n" target="_blank" class="btn btn-discord-secondary"><i class="fa-brands fa-discord"></i> ShadowRealms Network</a>
+                        <p class="small-text">ShadowRealms Network</p>
                     </div>
                     <div class="contact-card animated-card">
                         <h3><i class="fa-solid fa-at"></i> E-mail</h3>
