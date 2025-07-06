@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetContent = document.getElementById(targetId);
             if (targetContent) {
                 // Kicsi késleltetés, hogy a CSS animáció újra elinduljon
-                // A display: none -> display: block azonnali, de az animáció újbóli indításához kellhet ez a trükk
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
                         targetContent.classList.add('active');
@@ -140,28 +139,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Szerver státusz frissítése (demó adatokkal, amíg nincs backend)
-    const updateServerStatus = () => {
+    // Minecraft szerver státusz frissítése valós API hívással
+    const updateServerStatus = async () => {
         const playerCountElement = document.getElementById('player-count');
         const serverStatusTextElement = document.getElementById('server-status-text');
         const statusIndicator = document.querySelector('.status-indicator');
+        const serverIp = document.getElementById('server-ip').textContent; // Get the IP from the HTML
 
-        const randomPlayers = Math.floor(Math.random() * 150) + 1;
-        const isOnline = Math.random() > 0.1;
+        // Use a proxy or a CORS-enabled API to fetch server status
+        // mcsrvstat.us is a good public option for this, they handle CORS
+        const apiUrl = `https://api.mcsrvstat.us/2/${serverIp}`;
 
-        if (isOnline) {
-            playerCountElement.textContent = randomPlayers;
-            serverStatusTextElement.innerHTML = `SERVER STATUS: ONLINE (${randomPlayers}/200 Players)`;
-            statusIndicator.classList.remove('offline');
-            statusIndicator.classList.add('online');
-        } else {
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+
+            if (data.online) {
+                const playersOnline = data.players ? data.players.online : 0;
+                const playersMax = data.players ? data.players.max : 200; // Default max players if not provided
+                playerCountElement.textContent = playersOnline;
+                serverStatusTextElement.innerHTML = `SERVER STATUS: ONLINE (${playersOnline}/${playersMax} Players)`;
+                statusIndicator.classList.remove('offline');
+                statusIndicator.classList.add('online');
+            } else {
+                playerCountElement.textContent = '0';
+                serverStatusTextElement.innerHTML = `SERVER STATUS: OFFLINE`;
+                statusIndicator.classList.remove('online');
+                statusIndicator.classList.add('offline');
+            }
+        } catch (error) {
+            console.error('Error fetching server status:', error);
+            // Fallback to offline/error state if API call fails
             playerCountElement.textContent = '0';
-            serverStatusTextElement.innerHTML = `SERVER STATUS: OFFLINE`;
+            serverStatusTextElement.innerHTML = `SERVER STATUS: OFFLINE (Error)`;
             statusIndicator.classList.remove('online');
             statusIndicator.classList.add('offline');
         }
     };
 
     updateServerStatus();
-    setInterval(updateServerStatus, 30000);
+    setInterval(updateServerStatus, 60000); // Frissítés minden percben
 });
