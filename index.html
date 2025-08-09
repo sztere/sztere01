@@ -5,66 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShadowRealms Network</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a1d957d59b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1 class="logo-text">SHADOW<span>&</span>PHANTOM</h1>
-            <p class="tagline">Ahol a legendák születnek. Csatlakozz ma a következő generációs Minecraft kalandhoz!</p>
-
-            <nav class="tab-nav">
-                <ul>
-                    <li><a href="#home" class="tab-link active"><i class="fa-solid fa-house"></i> FŐOLDAL</a></li>
-                    <li><a href="#servers" class="tab-link"><i class="fa-solid fa-server"></i> JÁTÉKMÓDOK</a></li>
-                    <li><a href="#store" class="tab-link"><i class="fa-solid fa-shop"></i> BOLT</a></li>
-                    <li><a href="#vote" class="tab-link"><i class="fa-solid fa-star"></i> SZAVAZÁS</a></li>
-                    <li><a href="#staff" class="tab-link"><i class="fa-solid fa-users-gear"></i> STAFF</a></li>
-                </ul>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="https://via.placeholder.com/100x50.png?text=LOGO" alt="ShadowRealms Network Logo" class="logo">
+                <span class="server-name">ShadowRealms Network</span>
+            </a>
+            <nav class="main-nav">
+                <a href="#home" class="nav-link active" data-tab-target="home">Főoldal</a>
+                <a href="#vote" class="nav-link" data-tab-target="vote">Szavazás</a>
+                <a href="#store" class="nav-link" data-tab-target="store">Bolt</a>
+                <a href="#staff" class="nav-link" data-tab-target="staff">Staff</a>
             </nav>
+            <div class="server-info">
+                <a href="#" class="btn btn-connect">Csatlakozás</a>
+            </div>
+            <button class="burger-menu" id="burger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main class="content">
 
         <section id="home" class="tab-content active">
-            <div class="container">
-                <h2 class="section-title">Üdv a Shadow&Phantom Networkön!</h2>
-                <p class="section-subtitle">Ahol a legendák születnek. Csatlakozz ma!</p>
-                <div class="server-status-box">
-                    <div class="status-indicator online"></div>
-                    <div class="ip-info">
-                        <span class="status-text">SERVER STATUS: ONLINE</span>
-                        <div class="ip-address-container">
-                            <span class="ip-address">play.shadowphantom.net</span>
-                            <button class="copy-btn"><i class="fa-solid fa-copy"></i> Másolás</button>
+            <div class="hero-section">
+                <div class="hero-text-container">
+                    <h1>Üdv a ShadowRealms Networkön!</h1>
+                    <p class="hero-subtitle">A ShadowRealms Network a tökéletes hely a kalandvágyó játékosok számára. Jelenleg a következő játékmódokkal várunk titeket: Kingdoms, Economy, OneBlock, Bedwars és Creative. Csatlakozz hozzánk, és élj át felejthetetlen pillanatokat!</p>
+                    <div class="server-details">
+                        <div class="detail-item">
+                            <i class="fa-solid fa-server"></i>
+                            <span class="detail-label">IP Cím</span>
+                            <span class="detail-value">shadowrealms.sytes.net</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-users"></i>
+                            <span class="detail-label">Játékosok</span>
+                            <span class="detail-value">25 / 100</span>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="container gamemodes-section">
+                <h2>Játékmódjaink</h2>
+                <div class="gamemode-grid">
+                    <div class="gamemode-card animated-card">
+                        <img src="https://via.placeholder.com/200x150.png?text=Kingdoms" alt="Kingdoms Gamemode" class="gamemode-img">
+                        <h4>Kingdoms</h4>
+                        <p>Építsd fel saját királyságodat, foglalj el új területeket, és harcolj a hírnévért. Ez a játékmód a stratégiáról és a csapatmunkáról szól.</p>
+                    </div>
+                    <div class="gamemode-card animated-card">
+                        <img src="https://via.placeholder.com/200x150.png?text=Economy" alt="Economy Gamemode" class="gamemode-img">
+                        <h4>Economy</h4>
+                        <p>Merülj el a kereskedelem világába! Gyűjts, bányássz, craftolj, és hozz létre egy virágzó gazdaságot. A cél, hogy te legyél a szerver leggazdagabb játékosa!</p>
+                    </div>
+                    <div class="gamemode-card animated-card">
+                        <img src="https://via.placeholder.com/200x150.png?text=OneBlock" alt="OneBlock Gamemode" class="gamemode-img">
+                        <h4>OneBlock</h4>
+                        <p>A kihívás mestereinek! Egyetlen blokkból kell felépítened a világodat. Ahogy haladsz előre, egyre jobb és ritkább blokkokat kapsz.</p>
+                    </div>
+                    <div class="gamemode-card animated-card">
+                        <img src="https://via.placeholder.com/200x150.png?text=Bedwars" alt="Bedwars Gamemode" class="gamemode-img">
+                        <h4>Bedwars</h4>
+                        <p>Védd meg az ágyad, és támadd meg az ellenfélét. Egy gyors tempójú PVP játékmód, ami tele van akcióval.</p>
+                    </div>
+                    <div class="gamemode-card animated-card">
+                        <img src="https://via.placeholder.com/200x150.png?text=Creative" alt="Creative Gamemode" class="gamemode-img">
+                        <h4>Creative</h4>
+                        <p>Engedd szabadjára a fantáziádat! Építs meg bármit, amit csak el tudsz képzelni, anélkül, hogy az erőforrások miatt kellene aggódnod.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-cta">
+                <a href="#store" class="btn btn-primary">Nézd meg a boltot</a>
+                <a href="#vote" class="btn btn-secondary">Szavazz ránk</a>
+            </div>
         </section>
 
-        <section id="servers" class="tab-content">
+        <section id="vote" class="tab-content">
             <div class="container">
-                <h2 class="section-title"><i class="fa-solid fa-server"></i> JÁTÉKMÓDOK</h2>
-                <p class="section-subtitle">Válassz a különböző játékmódok közül, és találd meg a neked valót!</p>
-                <div class="game-modes-grid">
-                    <div class="game-mode-card animated-card">
-                        <img src="https://via.placeholder.com/200x150.png?text=Creative" alt="Creative Mode" class="game-mode-img">
-                        <h4>Creative</h4>
-                        <p>Engedd szabadjára a fantáziádat, és építs meg bármit, amit csak el tudsz képzelni!</p>
+                <h2 class="section-title"><i class="fa-solid fa-star"></i> SZAVAZÁS</h2>
+                <p class="section-subtitle">Támogass minket szavazatoddal, és szerezz jutalmakat!</p>
+                <div class="vote-sites-grid">
+                    <div class="vote-site-card animated-card">
+                        <img src="https://placehold.co/100x100/555/FFF?text=TopG" alt="TopG.org" class="vote-site-logo">
+                        <h4>TopG.org</h4>
+                        <p>Szavazz ránk a TopG.org-on minden nap!</p>
+                        <a href="https://topg.org/minecraft-servers/server-674919#vote" target="_blank" class="btn btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Szavazás</a>
                     </div>
-                    <div class="game-mode-card animated-card">
-                        <img src="https://via.placeholder.com/200x150.png?text=Survival" alt="Survival Mode" class="game-mode-img">
-                        <h4>Survival</h4>
-                        <p>Élj túl a vadonban, gyűjts erőforrásokat és küzdj meg a kihívásokkal!</p>
-                    </div>
-                    <div class="game-mode-card animated-card">
-                        <img src="https://via.placeholder.com/200x150.png?text=Skyblock" alt="Skyblock Mode" class="game-mode-img">
-                        <h4>Skyblock</h4>
-                        <p>Egy kis szigeten kezdesz, és a semmiből építed fel a birodalmadat!</p>
+                    <div class="vote-site-card animated-card">
+                        <img src="https://placehold.co/100x100/666/FFF?text=MCSL" alt="Minecraft-Servers.com" class="vote-site-logo">
+                        <h4>Minecraft-Servers.com</h4>
+                        <p>Minden szavazat számít! Köszönjük a támogatást!</p>
+                        <a href="https://minecraft-servers.com/server-xxxx" target="_blank" class="btn btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Szavazás</a>
                     </div>
                 </div>
             </div>
@@ -133,27 +174,6 @@
             </div>
         </section>
 
-        <section id="vote" class="tab-content">
-            <div class="container">
-                <h2 class="section-title"><i class="fa-solid fa-star"></i> SZAVAZÁS</h2>
-                <p class="section-subtitle">Támogass minket szavazatoddal, és szerezz jutalmakat!</p>
-                <div class="vote-sites-grid">
-                    <div class="vote-site-card animated-card">
-                        <img src="https://placehold.co/100x100/555/FFF?text=TopG" alt="TopG.org" class="vote-site-logo">
-                        <h4>TopG.org</h4>
-                        <p>Szavazz ránk a TopG.org-on minden nap!</p>
-                        <a href="https://topg.org/minecraft-servers/server-674919#vote" target="_blank" class="btn btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Szavazás</a>
-                    </div>
-                    <div class="vote-site-card animated-card">
-                        <img src="https://placehold.co/100x100/666/FFF?text=MCSL" alt="Minecraft-Servers.com" class="vote-site-logo">
-                        <h4>Minecraft-Servers.com</h4>
-                        <p>Minden szavazat számít! Köszönjük a támogatást!</p>
-                        <a href="https://minecraft-servers.com/server-xxxx" target="_blank" class="btn btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Szavazás</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="staff" class="tab-content">
             <div class="container">
                 <h2 class="section-title"><i class="fa-solid fa-users-gear"></i> STAFF</h2>
@@ -181,13 +201,17 @@
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Shadow&Phantom Network. Minden jog fenntartva.</p>
+        <div class="footer-container">
+            <div class="footer-socials">
+                <a href="https://discord.com/invite/x62A3ag54n" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 ShadowRealms Network. Minden jog fenntartva.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/a1d957d59b.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
