@@ -479,6 +479,15 @@ main {
     margin-bottom: var(--spacing-m);
 }
 
+.ip-info .player-count-label, .ip-info .player-count {
+    font-family: var(--font-orbitron);
+    color: var(--heading-aqua); /* Ezt változtattam meg a kérésed szerint */
+    font-size: 1.5em;
+    font-weight: 900;
+    margin: 0 var(--spacing-xs);
+    text-shadow: 0 0 10px rgba(160, 255, 255, 0.5); /* Ezt is az új színhez igazítottam */
+}
+
 .ip-address {
     font-family: var(--font-orbitron);
     font-size: 1.8em;
